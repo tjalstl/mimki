@@ -23,6 +23,7 @@ public interface UsersService {
 	public void updateUser(HttpSession session, UsersDto dto);
 	public void updateUserPwd(HttpSession session, UsersDto dto,
 			ModelAndView mView);
+
 }
 
 

@@ -47,6 +47,8 @@ public class UsersDaoImpl implements UsersDao{
 	public void updatePwd(UsersDto dto) {
 		session.update("users.updatePwd", dto);
 	}
+
+
 	
 }
 
