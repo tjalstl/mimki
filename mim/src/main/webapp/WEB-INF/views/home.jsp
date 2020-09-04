@@ -8,14 +8,7 @@
 <title>/views/home.jsp</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
 </head>
-<style>
-	#profileImage{
-		width: 50px;
-		height: 50px;
-		border: 1px solid #cecece;
-		border-radius: 50%;
-	}
-</style>
+
 <body>
 <div class="container">
 <h1>메인 페이지</h1>
@@ -27,8 +20,6 @@
 			<a href="${pageContext.request.contextPath }/users/signup_form.do">회원가입</a>
 		</c:when>
 		<c:otherwise>
-			<img id="profileImage" 
-							src="${pageContext.request.contextPath }${dto.profile }"/>
 			<a href="${pageContext.request.contextPath }/users/private/info.do"><strong>${id }</strong></a> 님 로그인중...
 			<a href="${pageContext.request.contextPath }/users/logout.do">로그아웃</a>
 		</c:otherwise>

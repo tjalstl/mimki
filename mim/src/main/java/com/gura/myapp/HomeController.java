@@ -24,14 +24,10 @@ import com.gura.myapp.users.service.UsersService;
 @Controller
 public class HomeController {
 
-	@Autowired
-	private UsersService service;
-	
 	@RequestMapping("/home")
-	public ModelAndView home(HttpServletRequest request,ModelAndView mView) {
-		service.getImg(request.getSession(), mView);
-		mView.setViewName("home");
-		return mView;
+	public String home() {
+		
+		return "home";
 		
 	}
 	
