@@ -1,4 +1,4 @@
-package com.gura.myapp.service;
+package com.gura.myapp.users.service;
 
 import java.io.File;
 import java.util.HashMap;
@@ -17,7 +17,6 @@ import org.springframework.web.servlet.ModelAndView;
 import com.gura.myapp.users.dao.UsersDao;
 import com.gura.myapp.users.dto.UsersDto;
 
-
 @Service
 public class UsersServiceImpl implements UsersService{
 	@Autowired
@@ -33,7 +32,7 @@ public class UsersServiceImpl implements UsersService{
 
 	@Override
 	public void addUser(UsersDto dto) {
-		String inputPwd=dto.getPwd();
+		String inputPwd=dto.getPwd(); 
 		BCryptPasswordEncoder encoder=new BCryptPasswordEncoder();
 		String encodedPwd=encoder.encode(inputPwd); 
 		dto.setPwd(encodedPwd);
@@ -43,16 +42,16 @@ public class UsersServiceImpl implements UsersService{
 	@Override
 	public void loginProcess(UsersDto dto, ModelAndView mView, 
 			HttpSession session) {
-		boolean isValid=false;
+		boolean isValid=false; 
 		UsersDto resultDto=dao.getData(dto.getId());
 		if(resultDto != null) {
 			String encodedPwd=resultDto.getPwd();
-			String inputPwd=dto.getPwd(); 
+			String inputPwd=dto.getPwd();
 			isValid=BCrypt.checkpw(inputPwd, encodedPwd);
 		}
 		
 		if(isValid) {
-			session.setAttribute("id", dto.getId()); 
+			session.setAttribute("id", dto.getId());
 			mView.addObject("isSuccess", true);
 		}else {
 			mView.addObject("isSuccess", false);
@@ -60,7 +59,7 @@ public class UsersServiceImpl implements UsersService{
 	}
 
 	@Override
-	public void getInfo(HttpSession session, ModelAndView mView) { 
+	public void getInfo(HttpSession session, ModelAndView mView) {
 		String id=(String)session.getAttribute("id");
 		UsersDto dto=dao.getData(id); 
 		mView.addObject("dto", dto);
@@ -123,7 +122,13 @@ public class UsersServiceImpl implements UsersService{
 		mView.addObject("isSuccess", isSuccess);
 	}
 
-
+	@Override
+	public void getImg(HttpSession session, ModelAndView mView) {
+		String id=(String)session.getAttribute("id");
+		UsersDto dto=dao.getImg(id);
+		mView.addObject("dto", dto);
+		
+	}
 	
 }
 

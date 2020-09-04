@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.gura.myapp.service.UsersService;
 import com.gura.myapp.users.dto.UsersDto;
+import com.gura.myapp.users.service.UsersService;
 
 
 @Controller

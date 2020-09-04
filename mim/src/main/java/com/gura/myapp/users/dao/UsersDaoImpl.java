@@ -48,6 +48,12 @@ public class UsersDaoImpl implements UsersDao{
 		session.update("users.updatePwd", dto);
 	}
 
+	@Override
+	public UsersDto getImg(String id) {
+		UsersDto dto = session.selectOne("users.getImg", id);
+		return dto;
+	}
+
 
 	
 }

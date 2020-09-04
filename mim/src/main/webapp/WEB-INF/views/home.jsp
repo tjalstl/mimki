@@ -17,7 +17,6 @@
 	}
 </style>
 <body>
-
 <div class="container">
 <h1>메인 페이지</h1>
 
@@ -28,11 +27,15 @@
 			<a href="${pageContext.request.contextPath }/users/signup_form.do">회원가입</a>
 		</c:when>
 		<c:otherwise>
-			
+			<img id="profileImage" 
+							src="${pageContext.request.contextPath }${dto.profile }"/>
 			<a href="${pageContext.request.contextPath }/users/private/info.do"><strong>${id }</strong></a> 님 로그인중...
 			<a href="${pageContext.request.contextPath }/users/logout.do">로그아웃</a>
 		</c:otherwise>
 	</c:choose>
+	<ul>
+		<li><a href="${pageContext.request.contextPath }/shop/list.do">상품 목록 보기</a></li>
+	</ul>
 </div>
 </body>
 </html>

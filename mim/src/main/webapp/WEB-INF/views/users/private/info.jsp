@@ -19,7 +19,7 @@
 <body>
 <div class="container">
 	<h1>개인정보 페이지</h1>
-	<table>
+	<table class="table">
 		<tr>
 			<th>아이디</th>
 			<td>${dto.id }</td>
@@ -53,9 +53,11 @@
 			<td>${dto.regdate }</td>
 		</tr>
 	</table>
-	<a href="updateform.do">개인정보 수정</a>
-	<a href="javascript:deleteConfirm()">탈퇴</a>
-	<a href="../../home.do">메인페이지 이동</a>
+	<ul>
+		<li><a href="updateform.do">개인정보 수정</a></li>
+		<li><a href="javascript:deleteConfirm()">탈퇴</a></li>
+		<li><a href="../../home.do">메인페이지 이동</a></li>
+	</ul>
 </div>
 <script>
 	function deleteConfirm(){

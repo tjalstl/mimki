@@ -9,4 +9,5 @@ public interface UsersDao {
 	public void delete(String id);
 	public void update(UsersDto dto);
 	public void updatePwd(UsersDto dto);
+	public UsersDto getImg(String id);
 }

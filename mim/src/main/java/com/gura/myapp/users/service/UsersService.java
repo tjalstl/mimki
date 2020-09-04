@@ -1,4 +1,4 @@
-package com.gura.myapp.service;
+package com.gura.myapp.users.service;
 
 import java.util.Map;
 
@@ -9,7 +9,6 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.gura.myapp.users.dto.UsersDto;
-
 
 public interface UsersService {
 	public Map<String, Object> isExistId(String inputId);
@@ -23,7 +22,7 @@ public interface UsersService {
 	public void updateUser(HttpSession session, UsersDto dto);
 	public void updateUserPwd(HttpSession session, UsersDto dto,
 			ModelAndView mView);
-
+	public void getImg(HttpSession session, ModelAndView mView);
 }
 
 
